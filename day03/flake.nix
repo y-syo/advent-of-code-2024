@@ -1,5 +1,5 @@
 {
-  description = "a minimal test development environment for rust";
+  description = "a minimal test development environment for ruby";
 
   inputs = {
 
@@ -17,11 +17,11 @@
         pkgs = import nixpkgs { system = "x86_64-linux"; };
 	  in pkgs.mkShell {
         packages = with pkgs; [
-          rustc gcc
+          gcc ruby
         ];
         shellHook = ''
           export CC=gcc
-          echo -e "\x1B[0;33mentering rust minimalist test development environment...\x1B[0m"
+          echo -e "\x1B[0;33mentering ruby minimalist test development environment...\x1B[0m"
         '';
       };
     };
