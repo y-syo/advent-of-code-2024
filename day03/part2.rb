@@ -1,6 +1,10 @@
-file = File.open("input.txt")
-file_data = file.read
-file.close
+if File.exists?("input.txt")
+  file = File.open("input.txt")
+  file_data = file.read
+  file.close
+else
+  file_data = "xmul(2,4)&mul[3,7]!^don't()_mul(5,5)+mul(32,64](mul(11,8)undo()?mul(8,5))"
+end
 
 #puts file_data
 sane_data = file_data.gsub(/don\'t\(\).*?do\(\)/m, "").scan(/mul\(\d+,\d+\)/)
